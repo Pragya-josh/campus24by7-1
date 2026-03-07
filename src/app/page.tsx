@@ -1,11 +1,14 @@
+import dynamic from 'next/dynamic';
+
+const FeaturesSection = dynamic(() => import("@/components/FeaturesSection"), { ssr: true });
+const ModulesSection = dynamic(() => import("@/components/ModulesSection"), { ssr: true });
+const BenefitsSection = dynamic(() => import("@/components/BenefitsSection"), { ssr: true });
+const PricingSection = dynamic(() => import("@/components/PricingSection"), { ssr: true });
+const TestimonialsSection = dynamic(() => import("@/components/TestimonialsSection"), { ssr: true });
+const CTASection = dynamic(() => import("@/components/CTASection"), { ssr: true });
+
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import FeaturesSection from "@/components/FeaturesSection";
-import ModulesSection from "@/components/ModulesSection";
-import BenefitsSection from "@/components/BenefitsSection";
-import PricingSection from "@/components/PricingSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import { SEO_CONFIG } from "@/lib/seo";
 import { Metadata } from "next";

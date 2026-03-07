@@ -1,61 +1,65 @@
-import Link from "next/link";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { APP_CONFIG } from "@/config/app.config";
-import { Button } from "@/components/ui/button";
+import ManagementLayout from "@/components/ManagementLayout";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "School Management System - Campus24by7",
-    description:
-        "Campus24by7 - Comprehensive School Management System: attendance, fees, academics, transport, HR and more. Book a free demo.",
-    keywords: [
-        "school management system",
-        "school ERP",
-        "student management system",
-        "fee management system",
-        "attendance management",
-    ],
+    description: "Premium School ERP for modern education. Manage attendance, fees, exams, and communication seamlessly.",
 };
 
+const schoolFeatures = [
+    {
+        title: "Student Lifecycle",
+        description: "From digital admissions to alumni tracking, manage the entire student journey in one secure platform."
+    },
+    {
+        title: "Automated Attendance",
+        description: "Biometric and mobile integration with real-time SMS alerts to keep parents informed and students safe."
+    },
+    {
+        title: "Smart Fee Collection",
+        description: "Complete fee automation with online payments, custom billing cycles, and instant digital receipts."
+    },
+    {
+        title: "Examination Hub",
+        description: "Simplified exam scheduling, automated report card generation, and comprehensive academic analytics."
+    },
+    {
+        title: "Transport & Safety",
+        description: "Route optimization, real-time GPS fleet tracking, and digital attendance for every school bus trip."
+    },
+    {
+        title: "Staff & Payroll",
+        description: "Comprehensive HR management with biometric attendance, leave tracking, and automated payroll processing."
+    }
+];
+
 export default function SchoolManagement() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Campus24by7 School ERP",
+        "applicationCategory": "EducationalBusinessApplication",
+        "operatingSystem": "Web, Android, iOS",
+        "description": "Comprehensive school management system for K-12 and pre-schools. Manage admissions, fees, and exams.",
+        "offers": {
+            "@type": "Offer",
+            "price": "4999",
+            "priceCurrency": "INR"
+        }
+    };
+
     return (
-        <div>
-            <Navbar />
-            <main className="container mx-auto px-4 py-16">
-                <div className="mb-6">
-                    <Link href="/" className="inline-block text-sm text-primary underline">
-                        ← Back to Home
-                    </Link>
-                </div>
-                <h1 className="text-4xl font-bold mb-4">School Management System</h1>
-                <p className="mb-6">
-                    Campus24by7 provides a complete school ERP — manage admissions,
-                    attendance, fees, academics, transport, HR/payroll and parent
-                    communication in one platform.
-                </p>
-
-                <div className="flex gap-4">
-                    <Button asChild>
-                        <a href={APP_CONFIG.links.bookSlot} target="_blank" rel="noopener noreferrer">📅 Book Free Demo</a>
-                    </Button>
-                    <Button asChild>
-                        <a href={APP_CONFIG.links.contactWhatsApp} target="_blank" rel="noopener noreferrer">💬 Talk To Sales</a>
-                    </Button>
-                </div>
-
-                <section className="mt-10">
-                    <h2 className="text-2xl font-semibold mb-3">Key Features</h2>
-                    <ul className="list-disc pl-5 space-y-2">
-                        <li>Student & staff management</li>
-                        <li>Attendance tracking</li>
-                        <li>Fees & invoicing</li>
-                        <li>Exams and gradebook</li>
-                        <li>Transport & route management</li>
-                    </ul>
-                </section>
-            </main>
-            <Footer />
-        </div>
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <ManagementLayout
+                title="Next-Gen School Management"
+                subtitle="Trusted by 300+ Pre-Schools & K-12 Schools"
+                description="Empower your faculty and engage your parents with a comprehensive ERP designed for the modern classroom. Simplify administration so you can focus on education."
+                features={schoolFeatures}
+            />
+        </>
     );
 }

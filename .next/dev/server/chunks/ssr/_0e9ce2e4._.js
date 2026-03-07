@@ -218,6 +218,44 @@ const SEO_CONFIG = {
                 "book school management demo",
                 "contact school software provider"
             ]
+        },
+        about: {
+            title: "About Campus24by7 – Leading Educational ERP Solution Provider",
+            description: "Learn about Campus24by7's mission to digitize and empower educational institutions across India with future-ready administration tools.",
+            keywords: [
+                "about campus24by7",
+                "educational technology india",
+                "school erp mission",
+                "campus automation story"
+            ]
+        },
+        faq: {
+            title: "Frequently Asked Questions – Campus24by7 Support",
+            description: "Find answers to common questions about Campus24by7 School ERP features, pricing, implementation, and support.",
+            keywords: [
+                "campus24by7 faq",
+                "school software help",
+                "coaching erp questions",
+                "institute management training"
+            ]
+        },
+        privacy: {
+            title: "Privacy Policy – Campus24by7",
+            description: "Our commitment to protecting the data privacy of schools, colleges, students, and parents using the Campus24by7 platform.",
+            keywords: [
+                "data privacy",
+                "education data security",
+                "campus24by7 privacy policy"
+            ]
+        },
+        terms: {
+            title: "Terms of Service – Campus24by7",
+            description: "Terms and conditions for using the Campus24by7 institutional management platform and related services.",
+            keywords: [
+                "terms of service",
+                "user agreement",
+                "campus24by7 terms"
+            ]
         }
     },
     structuredData: {
@@ -243,15 +281,32 @@ const SEO_CONFIG = {
         product: {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
-            name: "Campus24by7",
-            description: "Complete school, college, institute, and coaching center management ERP system",
+            name: "Campus24by7 ERP",
+            description: "Premium All-in-one ERP solution for schools, colleges, and coaching centers. Features include biometric attendance, automated fee collection, examination management, payroll, and parent-teacher communication portals.",
             url: "https://campus24by7.com",
-            applicationCategory: "BusinessApplication",
-            operatingSystem: "Web-based",
+            applicationCategory: "EducationalBusinessApplication",
+            operatingSystem: "Web-based, Android, iOS",
+            featureList: [
+                "Biometric Attendance Automation",
+                "Digital Fee Collection & SMS Reminders",
+                "Exam Management & Report Card Generation",
+                "Transport Fleet Tracking",
+                "HR & Payroll Automation",
+                "Inventory & Library Management",
+                "Multi-branch Leadership Dashboard",
+                "Student & Parent Mobile Apps"
+            ],
             offers: {
                 "@type": "AggregateOffer",
                 priceCurrency: "INR",
-                priceRange: "4999 - Custom"
+                lowPrice: "4999",
+                highPrice: "9999",
+                offerCount: "3"
+            },
+            aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.9",
+                reviewCount: "520"
             }
         },
         localBusiness: {
@@ -371,6 +426,10 @@ const metadata = {
         description: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$seo$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SEO_CONFIG"].site.description,
         creator: "@campus24by7"
     },
+    icons: {
+        icon: "/logo.png",
+        apple: "/logo.png"
+    },
     robots: {
         index: true,
         follow: true
@@ -385,28 +444,42 @@ function RootLayout({ children }) {
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/app/layout.tsx",
-                    lineNumber: 44,
+                    lineNumber: 48,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
                     type: "application/ld+json",
                     dangerouslySetInnerHTML: {
-                        __html: JSON.stringify(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$seo$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SEO_CONFIG"].structuredData.organization)
+                        __html: `[
+                            ${JSON.stringify(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$seo$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SEO_CONFIG"].structuredData.organization)},
+                            ${JSON.stringify(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$seo$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SEO_CONFIG"].structuredData.product)},
+                            {
+                                "@context": "https://schema.org",
+                                "@type": "WebSite",
+                                "name": "${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$seo$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SEO_CONFIG"].site.name}",
+                                "url": "${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$seo$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SEO_CONFIG"].site.url}",
+                                "potentialAction": {
+                                    "@type": "SearchAction",
+                                    "target": "${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$seo$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SEO_CONFIG"].site.url}/explore?q={search_term_string}",
+                                    "query-input": "required name=search_term_string"
+                                }
+                            }
+                        ]`
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/app/layout.tsx",
-                    lineNumber: 47,
+                    lineNumber: 51,
                     columnNumber: 17
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/layout.tsx",
-            lineNumber: 43,
+            lineNumber: 47,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/layout.tsx",
-        lineNumber: 42,
+        lineNumber: 46,
         columnNumber: 9
     }, this);
 }

@@ -1,58 +1,66 @@
-import Link from "next/link";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { APP_CONFIG } from "@/config/app.config";
-import { Button } from "@/components/ui/button";
+import ManagementLayout from "@/components/ManagementLayout";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "College Management System - Campus24by7",
-    description:
-        "Campus24by7 - College Management ERP: manage courses, students, fees, exams, payroll and academic administration. Book a demo.",
-    keywords: [
-        "college management system",
-        "college ERP",
-        "academic management software",
-        "student information system",
-    ],
+    description: "Enterprise-grade College ERP for advanced academic administration, research, and placement management.",
 };
 
+const collegeFeatures = [
+    {
+        title: "Academic Administration",
+        description: "Manage complex course structures, credits, departments, and multi-disciplinary curriculums with ease."
+    },
+    {
+        title: "Placement Cell",
+        description: "Dedicated portal for placement coordination, student resumes, and corporate campus recruitment tracking."
+    },
+    {
+        title: "Examination System",
+        description: "Secure grade management, CGPA calculations, semester-wise results, and digital transcript generation."
+    },
+    {
+        title: "Research & Projects",
+        description: "Keep track of faculty research papers, patents, student projects, and institutional collaborations."
+    },
+    {
+        title: "Library Management",
+        description: "Advanced cataloging, RFID integration, automated fine calculation, and digital resource repository."
+    },
+    {
+        title: "Hostel & Facilities",
+        description: "Complete room allocation, meal planning, facility bookings, and inventory management for campus assets."
+    }
+];
+
 export default function CollegeManagement() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Campus24by7 College ERP",
+        "applicationCategory": "EducationalBusinessApplication",
+        "operatingSystem": "Web, Android, iOS",
+        "description": "Enterprise-grade College ERP for advanced academic administration, research, and placement management.",
+        "offers": {
+            "@type": "Offer",
+            "price": "9999",
+            "priceCurrency": "INR"
+        }
+    };
+
     return (
-        <div>
-            <Navbar />
-            <main className="container mx-auto px-4 py-16">
-                <div className="mb-6">
-                    <Link href="/" className="inline-block text-sm text-primary underline">
-                        ← Back to Home
-                    </Link>
-                </div>
-                <h1 className="text-4xl font-bold mb-4">College Management System</h1>
-                <p className="mb-6">
-                    Campus24by7 helps colleges manage courses, departments, students,
-                    examinations, research records, payroll and administration.
-                </p>
-
-                <div className="flex gap-4">
-                    <Button asChild>
-                        <a href={APP_CONFIG.links.bookSlot} target="_blank" rel="noopener noreferrer">📅 Book Free Demo</a>
-                    </Button>
-                    <Button asChild>
-                        <a href={APP_CONFIG.links.contactWhatsApp} target="_blank" rel="noopener noreferrer">💬 Talk To Sales</a>
-                    </Button>
-                </div>
-
-                <section className="mt-10">
-                    <h2 className="text-2xl font-semibold mb-3">Why Colleges Choose Us</h2>
-                    <ul className="list-disc pl-5 space-y-2">
-                        <li>Course & curriculum management</li>
-                        <li>Exam scheduling & grading</li>
-                        <li>Research & publication tracking</li>
-                        <li>Finance & payroll integration</li>
-                    </ul>
-                </section>
-            </main>
-            <Footer />
-        </div>
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <ManagementLayout
+                title="Premium College Ecosystem"
+                subtitle="Built for Higher Education Excellence"
+                description="A robust, scalable ERP that connects departments, streamlines research, and enhances student placement outcomes in your institution."
+                features={collegeFeatures}
+                accentColor="accent"
+            />
+        </>
     );
 }

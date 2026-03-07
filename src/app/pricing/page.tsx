@@ -15,7 +15,7 @@ const plans = [
         name: "Starter",
         description: "Essential features for small schools & institutes",
         price: "₹49",
-        unit: "/student/year",
+        unit: "/student/month",
         features: [
             "Student Information System",
             "Attendance Management",
@@ -30,7 +30,7 @@ const plans = [
         name: "Pro",
         description: "Complete solution for growing campuses",
         price: "₹99",
-        unit: "/student/year",
+        unit: "/student/month",
         features: [
             "Everything in Starter",
             "Examination & Grading",

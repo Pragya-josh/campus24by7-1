@@ -44,8 +44,14 @@ const featuresList = [
     {
         title: "Transport Management",
         description: "Route planning, vehicle tracking, driver management, and transport fee collection.",
-        icon: "bus",
+        icon: "🚌",
         link: "/features/transport-management"
+    },
+    {
+        title: "Expense Management",
+        description: "Track institutional expenses, budgets, and financial reports efficiently.",
+        icon: "🧾",
+        link: "/features/expense-management"
     }
 ];
 

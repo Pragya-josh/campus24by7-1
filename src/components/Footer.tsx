@@ -16,9 +16,9 @@ const Footer = () => {
       { name: "Testimonials", href: "/#testimonials" },
     ],
     company: [
-      { name: "About Us", href: "/about" }, // Placeholder for now or redirect
-      { name: "Careers", href: "/careers" }, // Placeholder
-      { name: "Blog", href: "/blog" },
+      { name: "About Us", href: "/about" },
+      { name: "Success Stories", href: "/success-stories" },
+      { name: "FAQ", href: "/faq" },
       { name: "Contact", href: "/contact" },
     ],
     legal: [
@@ -29,10 +29,10 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Youtube, href: "#", label: "YouTube" },
+    { icon: Facebook, href: "https://www.linkedin.com/company/campus24by7", label: "Facebook" },
+    { icon: Instagram, href: "https://www.linkedin.com/company/campus24by7", label: "Instagram" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/campus24by7", label: "LinkedIn" },
+    { icon: Youtube, href: "https://www.linkedin.com/company/campus24by7", label: "YouTube" },
   ];
 
   return (
@@ -42,7 +42,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-6">
-              <Logo size="lg" showText={true} textClassName="text-white" />
+              <Logo size="lg" showText={true} textClassName="text-white text-3xl font-extrabold" />
             </Link>
             <p className="text-primary-foreground/70 mb-6 max-w-sm">
               All-in-one ERP solution for schools, colleges & institutes. Automate your operations and focus on what matters — education.

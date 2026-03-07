@@ -51,6 +51,54 @@ const getFeatureData = (slug: string): FeaturePageProps | null => {
                 "SMS Alerts to Parents",
                 "Monthly Attendance Reports"
             ]
+        },
+        "expense-management": {
+            title: "Expense Management",
+            description: "Track and manage your institution's expenses, budgets, and financial health.",
+            slug: "expense-management",
+            benefits: [
+                "Detailed Expense Tracking",
+                "Budget Allocation & Monitoring",
+                "Vendor Management",
+                "Purchase Order Workflow",
+                "Comprehensive Financial Reports"
+            ]
+        },
+        "examination-management": {
+            title: "Examination & Grading",
+            description: "Streamline your entire examination process from scheduling to result publication.",
+            slug: "examination-management",
+            benefits: [
+                "Exam Schedule Builder",
+                "Automatic Admit Card Generation",
+                "Online Marks entry",
+                "Custom Report Card Designer",
+                "Result Analysis & Analytics"
+            ]
+        },
+        "hr-payroll": {
+            title: "HR & Payroll",
+            description: "Manage your staff records, attendance, and payroll with ease.",
+            slug: "hr-payroll",
+            benefits: [
+                "Staff Profile Management",
+                "Leave & Attendance Tracking",
+                "Automated Payroll Processing",
+                "PF & Tax Management",
+                "Performance Appraisals"
+            ]
+        },
+        "transport-management": {
+            title: "Transport Management",
+            description: "Manage your vehicle fleet, routes, and student safety effectively.",
+            slug: "transport-management",
+            benefits: [
+                "Route & Stop Management",
+                "Vehicle Maintenance Tracking",
+                "Driver & Attendant Records",
+                "Transport Fee Collection",
+                "GPS Tracking Integration"
+            ]
         }
     }
     return features[slug] || null;
@@ -61,7 +109,11 @@ export async function generateStaticParams() {
     const features = [
         "student-information-system",
         "fee-management",
-        "attendance-management"
+        "attendance-management",
+        "expense-management",
+        "examination-management",
+        "hr-payroll",
+        "transport-management"
     ];
 
     return features.map((slug) => ({

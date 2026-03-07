@@ -1,108 +1,52 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Link from "next/link";
 import { Metadata } from "next";
+import { SEO_CONFIG } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: "Privacy Policy - Campus24by7",
-    description:
-        "Privacy Policy for Campus24by7. Learn what information we collect, how we use it, and your rights regarding your data.",
-    keywords: [
-        "privacy policy",
-        "data protection",
-        "campus24by7 privacy",
-        "personal data",
-    ],
+    title: SEO_CONFIG.pages.privacy.title,
+    description: SEO_CONFIG.pages.privacy.description,
 };
 
-export default function Privacy() {
+export default function PrivacyPage() {
     return (
-        <div>
+        <div className="min-h-screen bg-background">
             <Navbar />
-            <main className="container mx-auto px-4 py-16">
-                <div className="mb-6">
-                    <Link href="/" className="inline-block text-sm text-primary underline">
-                        ← Back to Home
-                    </Link>
-                </div>
+            <main className="pt-32 pb-24">
+                <article className="container mx-auto px-4 max-w-4xl prose prose-slate dark:prose-invert">
+                    <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
+                    <p className="text-muted-foreground mb-8">Last Updated: February 22, 2026</p>
 
-                <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
+                    <div className="space-y-12">
+                        <section>
+                            <h2 className="text-2xl font-bold mb-4">1. Data Collection</h2>
+                            <p className="text-muted-foreground leading-relaxed">
+                                Campus24by7 collects information necessary for the operation of its institutional management platform, including student records, teacher details, and administrative data provided by the subscribing institution.
+                            </p>
+                        </section>
 
-                <section className="mb-6">
-                    <h2 className="text-2xl font-semibold mb-2">1. Information We Collect</h2>
-                    <p className="mb-2">We may collect the following information from users:</p>
-                    <ul className="list-disc pl-5 space-y-1">
-                        <li>Name</li>
-                        <li>Email address</li>
-                        <li>Phone number</li>
-                        <li>Login credentials (encrypted)</li>
-                        <li>Academic or institutional details (if applicable)</li>
-                        <li>Device information (browser type, operating system)</li>
-                        <li>Usage data for improving app performance</li>
-                    </ul>
-                </section>
+                        <section>
+                            <h2 className="text-2xl font-bold mb-4">2. Use of Information</h2>
+                            <p className="text-muted-foreground leading-relaxed">
+                                The data collected is used solely for the purpose of providing the service, including attendance tracking, fee management, academic reporting, and institutional communication. We never sell your data to third-party advertisers.
+                            </p>
+                        </section>
 
-                <section className="mb-6">
-                    <h2 className="text-2xl font-semibold mb-2">2. How We Use Your Information</h2>
-                    <p className="mb-2">We use the collected data to:</p>
-                    <ul className="list-disc pl-5 space-y-1">
-                        <li>Provide and maintain our services</li>
-                        <li>Authenticate users and manage accounts</li>
-                        <li>Communicate important updates and notifications</li>
-                        <li>Improve functionality, security, and user experience</li>
-                        <li>Comply with legal obligations</li>
-                    </ul>
-                </section>
+                        <section>
+                            <h2 className="text-2xl font-bold mb-4">3. Data Security</h2>
+                            <p className="text-muted-foreground leading-relaxed">
+                                We implement robust administrative and technical security measures to protect against the loss, misuse, or alteration of data under our control. All sensitive financial data is encrypted using industry-standard protocols.
+                            </p>
+                        </section>
 
-                <section className="mb-6">
-                    <h2 className="text-2xl font-semibold mb-2">3. Data Sharing & Disclosure</h2>
-                    <p className="mb-2">We do not sell, trade, or rent users’ personal data. Data may be shared only:</p>
-                    <ul className="list-disc pl-5 space-y-1">
-                        <li>When required by law</li>
-                        <li>With trusted services necessary for app functionality (such as hosting or authentication)</li>
-                        <li>To protect our legal rights or prevent misuse</li>
-                    </ul>
-                </section>
-
-                <section className="mb-6">
-                    <h2 className="text-2xl font-semibold mb-2">4. Data Security</h2>
-                    <p>We take appropriate measures to protect user data from unauthorized access, loss, misuse, or disclosure. However, no method of transmission over the Internet is 100% secure.</p>
-                </section>
-
-                <section className="mb-6">
-                    <h2 className="text-2xl font-semibold mb-2">5. Cookies & Tracking</h2>
-                    <p>We may use cookies or similar technologies to maintain user sessions, improve site performance, and analyze usage trends. Users can control cookies through their browser settings.</p>
-                </section>
-
-                <section className="mb-6">
-                    <h2 className="text-2xl font-semibold mb-2">6. Children’s Privacy</h2>
-                    <p>Campus24by7 is not intended for children under the age of 13. We do not knowingly collect personal data from children. If such data is identified, it will be promptly deleted.</p>
-                </section>
-
-                <section className="mb-6">
-                    <h2 className="text-2xl font-semibold mb-2">7. Third-Party Services</h2>
-                    <p>Our application may contain links to third-party websites or services. We are not responsible for the privacy practices of those services.</p>
-                </section>
-
-                <section className="mb-6">
-                    <h2 className="text-2xl font-semibold mb-2">8. Data Retention</h2>
-                    <p>Personal data is retained only for as long as necessary to fulfill the purposes outlined in this policy or to comply with legal obligations.</p>
-                </section>
-
-                <section className="mb-6">
-                    <h2 className="text-2xl font-semibold mb-2">9. User Rights</h2>
-                    <p>Depending on applicable laws, users may have the right to access, correct, or request deletion of their personal data. Requests can be submitted using the contact details below.</p>
-                </section>
-
-                <section className="mb-6">
-                    <h2 className="text-2xl font-semibold mb-2">10. Changes to This Policy</h2>
-                    <p>We reserve the right to update this Privacy Policy at any time. Changes will be effective upon posting on this page, and the updated date will be revised accordingly.</p>
-                </section>
-
-                <section className="mb-6">
-                    <h2 className="text-2xl font-semibold mb-2">11. Contact Information</h2>
-                    <p>For questions or concerns, please contact us at <a href="mailto:support@campus24by7.com" className="text-primary underline">support@campus24by7.com</a>.</p>
-                </section>
+                        <section>
+                            <h2 className="text-2xl font-bold mb-4">4. Your Rights</h2>
+                            <p className="text-muted-foreground leading-relaxed">
+                                Institutions have the right to access, edit, or delete their data at any time through their administrator dashboard. Upon termination of service, we provide data export options and ensure secure deletion of records after a retention period.
+                            </p>
+                        </section>
+                    </div>
+                </article>
             </main>
             <Footer />
         </div>

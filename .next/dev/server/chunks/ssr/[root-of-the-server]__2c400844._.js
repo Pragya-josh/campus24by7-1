@@ -122,25 +122,64 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$user$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__UserCircle$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/circle-user.js [app-rsc] (ecmascript) <export default as UserCircle>");
 ;
 const NAV_LINKS = [
-    // { name: "School Management", href: "/school-management" },
-    // { name: "College Management", href: "/college-management" },
-    // { name: "Institute & Coaching", href: "/institute-management" },
     {
-        name: "Features",
-        href: "/features"
+        name: "Solutions",
+        children: [
+            {
+                name: "School Management",
+                href: "/school-management",
+                description: "ERP for K-12 and Pre-schools"
+            },
+            {
+                name: "College Management",
+                href: "/college-management",
+                description: "Higher education administration"
+            },
+            {
+                name: "Institute Management",
+                href: "/institute-management",
+                description: "Coaching and vocational centers"
+            }
+        ]
     },
-    // { name: "Modules", href: "#modules" }, // Modules usually part of features
+    {
+        name: "Product",
+        children: [
+            {
+                name: "Features",
+                href: "/features",
+                description: "Explore all 50+ modules"
+            },
+            {
+                name: "Explore Institutions",
+                href: "/explore",
+                description: "Directory of educational hubs"
+            }
+        ]
+    },
     {
         name: "Pricing",
         href: "/pricing"
     },
     {
-        name: "Blog",
-        href: "/blog"
-    },
-    {
-        name: "Contact",
-        href: "/contact"
+        name: "Company",
+        children: [
+            {
+                name: "About Us",
+                href: "/about",
+                description: ""
+            },
+            {
+                name: "FAQ",
+                href: "/faq",
+                description: ""
+            },
+            {
+                name: "Contact",
+                href: "/contact",
+                description: ""
+            }
+        ]
     }
 ];
 const HERO_HIGHLIGHTS = [
@@ -1397,24 +1436,24 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$
 ;
 const Logo = ({ className, size = "md", showText = false, textClassName, variant = "full" })=>{
     const sizeMap = {
-        sm: "w-8 h-8",
+        sm: "w-10 h-10",
         md: "w-12 h-12",
-        lg: "w-12 h-12",
-        xl: "w-16 h-16"
+        lg: "w-14 h-14",
+        xl: "w-20 h-20"
     };
     const textSizeMap = {
-        sm: "text-sm",
-        md: "text-lg",
-        lg: "text-xl",
-        xl: "text-2xl"
+        sm: "text-base",
+        md: "text-xl",
+        lg: "text-2xl",
+        xl: "text-4xl"
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["cn"])("flex items-center", showText && "gap-3"),
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                src: "/logo.svg",
+                src: "/logo.png",
                 alt: "Campus24by7",
-                className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["cn"])(sizeMap[size], "flex-shrink-0", "bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg p-1", className),
+                className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["cn"])(sizeMap[size], "flex-shrink-0", "rounded-xl shadow-lg border border-white/20 bg-white p-1", className),
                 loading: "lazy"
             }, void 0, false, {
                 fileName: "[project]/src/components/Logo.tsx",
@@ -1422,7 +1461,7 @@ const Logo = ({ className, size = "md", showText = false, textClassName, variant
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             showText && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["cn"])("font-bold text-foreground whitespace-nowrap", textSizeMap[size], textClassName),
+                className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["cn"])("font-bold text-foreground whitespace-nowrap text-glow", textSizeMap[size], textClassName),
                 children: "Campus24by7"
             }, void 0, false, {
                 fileName: "[project]/src/components/Logo.tsx",
@@ -1529,22 +1568,22 @@ const Footer = ()=>{
     const socialLinks = [
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$facebook$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Facebook$3e$__["Facebook"],
-            href: "#",
+            href: "https://www.linkedin.com/company/campus24by7",
             label: "Facebook"
         },
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$instagram$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Instagram$3e$__["Instagram"],
-            href: "#",
+            href: "https://www.linkedin.com/company/campus24by7",
             label: "Instagram"
         },
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$linkedin$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Linkedin$3e$__["Linkedin"],
-            href: "#",
+            href: "https://www.linkedin.com/company/campus24by7",
             label: "LinkedIn"
         },
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$youtube$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Youtube$3e$__["Youtube"],
-            href: "#",
+            href: "https://www.linkedin.com/company/campus24by7",
             label: "YouTube"
         }
     ];
@@ -1565,7 +1604,7 @@ const Footer = ()=>{
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Logo$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Logo"], {
                                         size: "lg",
                                         showText: true,
-                                        textClassName: "text-white"
+                                        textClassName: "text-white text-3xl font-extrabold"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Footer.tsx",
                                         lineNumber: 45,

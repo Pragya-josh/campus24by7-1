@@ -1,3 +1,16 @@
 {
-  "/page": "app/page.js"
+  "/about/page": "app/about/page.js",
+  "/college-management/page": "app/college-management/page.js",
+  "/compare/page": "app/compare/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/explore/page": "app/explore/page.js",
+  "/faq/page": "app/faq/page.js",
+  "/features/page": "app/features/page.js",
+  "/institute-management/page": "app/institute-management/page.js",
+  "/login/page": "app/login/page.js",
+  "/manifest.webmanifest/route": "app/manifest.webmanifest/route.js",
+  "/page": "app/page.js",
+  "/pricing/page": "app/pricing/page.js",
+  "/school-management/page": "app/school-management/page.js",
+  "/success-stories/page": "app/success-stories/page.js"
 }

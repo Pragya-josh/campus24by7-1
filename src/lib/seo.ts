@@ -123,21 +123,20 @@ export const SEO_CONFIG = {
 
   pages: {
     home: {
-      title: "Campus24by7 – Best School, College & Institute Management ERP System",
+      title: "Campus24by7 – Best School Management System & College ERP Software",
       description:
-        "Complete school, college, and institute management system and ERP software for coaching centers. Manage admissions, fees, attendance, academics, HR, transport, and more. Book a free demo today!",
+        "Looking for the best school management system or college ERP? Campus24by7 is the top-rated cloud solution for schools, colleges, and coaching centers to manage fees, attendance, and academics.",
       keywords: [
-        "school management system",
-        "college management software",
-        "institute management system",
-        "coaching management software",
-        "school ERP",
-        "college ERP",
-        "institute ERP",
         "best school management system",
-        "college ERP software",
-        "institute management solution",
-        "campus automation platform",
+        "best ERP solution",
+        "best college ERP software",
+        "best institute management system",
+        "top school management platform India",
+        "best coaching management software",
+        "school ERP solution",
+        "college management software",
+        "institute ERP India",
+        "best affordable school ERP",
       ],
     },
 
@@ -187,6 +186,26 @@ export const SEO_CONFIG = {
         "contact school software provider",
       ],
     },
+    about: {
+      title: "About Campus24by7 – Leading Educational ERP Solution Provider",
+      description: "Learn about Campus24by7's mission to digitize and empower educational institutions across India with future-ready administration tools.",
+      keywords: ["about campus24by7", "educational technology india", "school erp mission", "campus automation story"],
+    },
+    faq: {
+      title: "Frequently Asked Questions – Campus24by7 Support",
+      description: "Find answers to common questions about Campus24by7 School ERP features, pricing, implementation, and support.",
+      keywords: ["campus24by7 faq", "school software help", "coaching erp questions", "institute management training"],
+    },
+    privacy: {
+      title: "Privacy Policy – Campus24by7",
+      description: "Our commitment to protecting the data privacy of schools, colleges, students, and parents using the Campus24by7 platform.",
+      keywords: ["data privacy", "education data security", "campus24by7 privacy policy"],
+    },
+    terms: {
+      title: "Terms of Service – Campus24by7",
+      description: "Terms and conditions for using the Campus24by7 institutional management platform and related services.",
+      keywords: ["terms of service", "user agreement", "campus24by7 terms"],
+    },
   },
 
   structuredData: {
@@ -214,17 +233,34 @@ export const SEO_CONFIG = {
     product: {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      name: "Campus24by7",
+      name: "Campus24by7 ERP",
       description:
-        "Complete school, college, institute, and coaching center management ERP system",
+        "Premium All-in-one ERP solution for schools, colleges, and coaching centers. Features include biometric attendance, automated fee collection, examination management, payroll, and parent-teacher communication portals.",
       url: "https://campus24by7.com",
-      applicationCategory: "BusinessApplication",
-      operatingSystem: "Web-based",
+      applicationCategory: "EducationalBusinessApplication",
+      operatingSystem: "Web-based, Android, iOS",
+      featureList: [
+        "Biometric Attendance Automation",
+        "Digital Fee Collection & SMS Reminders",
+        "Exam Management & Report Card Generation",
+        "Transport Fleet Tracking",
+        "HR & Payroll Automation",
+        "Inventory & Library Management",
+        "Multi-branch Leadership Dashboard",
+        "Student & Parent Mobile Apps"
+      ],
       offers: {
         "@type": "AggregateOffer",
         priceCurrency: "INR",
-        priceRange: "4999 - Custom",
+        lowPrice: "4999",
+        highPrice: "9999",
+        offerCount: "3"
       },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.9",
+        reviewCount: "520"
+      }
     },
 
     localBusiness: {
@@ -233,22 +269,65 @@ export const SEO_CONFIG = {
       name: "Campus24by7",
       image: "https://campus24by7.com/logo.svg",
       description:
-        "School, College, Institute, and Coaching Center Management System Provider",
+        "Best School, College, Institute, and Coaching Center Management System Provider in India",
       address: {
         "@type": "PostalAddress",
         streetAddress: "Dehradun",
         addressLocality: "Dehradun",
         addressRegion: "Uttarakhand",
-        postalCode: "",
+        postalCode: "248001",
         addressCountry: "IN",
       },
       telephone: "+919557172321",
       url: "https://campus24by7.com",
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: "30.3165",
+        longitude: "78.0322"
+      },
       sameAs: [
         "https://www.facebook.com/campus24by7",
         "https://www.twitter.com/campus24by7",
+        "https://www.linkedin.com/company/campus24by7"
       ],
     },
+
+    services: {
+      school: {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "School Management System",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "Campus24by7"
+        },
+        "description": "Comprehensive K-12 school ERP with attendance automation, fee management, and academic tracking.",
+        "areaServed": "India",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "School ERP Features",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Biometric Attendance" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Online Fee Collection" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Exam Management" } }
+          ]
+        }
+      },
+      college: {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "College & University ERP",
+        "provider": { "$ref": "organization" },
+        "description": "Robust higher education administration software for colleges and universities."
+      },
+      institute: {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Institute & Coaching Management Software",
+        "provider": { "$ref": "organization" },
+        "description": "Specialized ERP for coaching centers and vocational institutes with batch and test series management."
+      }
+    }
   },
 
   /**
@@ -275,7 +354,8 @@ export const SEO_CONFIG = {
   /**
    * Generate JSON-LD script tag content
    */
-  getStructuredData: (type: "organization" | "product" | "localBusiness") => {
+  getStructuredData: (type: "organization" | "product" | "localBusiness" | "services") => {
+    if (type === "services") return JSON.stringify(Object.values(SEO_CONFIG.structuredData.services));
     return JSON.stringify(SEO_CONFIG.structuredData[type]);
   },
 };

@@ -1,8 +1,20 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Outfit, Inter } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/Providers";
 import { SEO_CONFIG } from "@/lib/seo";
+
+const outfit = Outfit({
+    subsets: ["latin"],
+    variable: "--font-outfit",
+    display: "swap"
+});
+
+const inter = Inter({
+    subsets: ["latin"],
+    variable: "--font-inter",
+    display: "swap"
+});
 
 export const metadata: Metadata = {
     title: {
@@ -27,10 +39,28 @@ export const metadata: Metadata = {
         description: SEO_CONFIG.site.description,
         creator: "@campus24by7",
     },
+    icons: {
+        icon: "/logo.png",
+        apple: "/logo.png",
+    },
     robots: {
         index: true,
         follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
     },
+    alternates: {
+        canonical: SEO_CONFIG.site.url,
+    },
+    other: {
+        "ai-description": "Campus24by7 is a comprehensive educational ERP for schools, colleges, and institutes. It offers automated attendance, fee collection, HR management, and a parent-teacher portal. Ideal for K-12 and higher education institutions seeking digital transformation.",
+        "generative-ai": "index, follow",
+    }
 };
 
 export default function RootLayout({
@@ -39,15 +69,74 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-            <body>
+        <html lang="en" className={`${outfit.variable} ${inter.variable}`}>
+            <body className="font-inter antialiased">
                 <Providers>
                     {children}
                 </Providers>
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(SEO_CONFIG.structuredData.organization),
+                        __html: `[
+                            ${JSON.stringify(SEO_CONFIG.structuredData.organization)},
+                            ${JSON.stringify(SEO_CONFIG.structuredData.product)},
+                            ${JSON.stringify(SEO_CONFIG.structuredData.localBusiness)},
+                            ${JSON.stringify(Object.values(SEO_CONFIG.structuredData.services))},
+                            {
+                                "@context": "https://schema.org",
+                                "@type": "WebSite",
+                                "name": "${SEO_CONFIG.site.name}",
+                                "url": "${SEO_CONFIG.site.url}",
+                                "potentialAction": {
+                                    "@type": "SearchAction",
+                                    "target": "${SEO_CONFIG.site.url}/explore?q={search_term_string}",
+                                    "query-input": "required name=search_term_string"
+                                }
+                            },
+                            {
+                                "@context": "https://schema.org",
+                                "@type": "BreadcrumbList",
+                                "itemListElement": [
+                                    {
+                                        "@type": "ListItem",
+                                        "position": 1,
+                                        "name": "Home",
+                                        "item": "${SEO_CONFIG.site.url}"
+                                    },
+                                    {
+                                        "@type": "ListItem",
+                                        "position": 2,
+                                        "name": "Solutions",
+                                        "item": "${SEO_CONFIG.site.url}/#solutions"
+                                    },
+                                    {
+                                        "@type": "ListItem",
+                                        "position": 3,
+                                        "name": "Features",
+                                        "item": "${SEO_CONFIG.site.url}/features"
+                                    },
+                                    {
+                                        "@type": "ListItem",
+                                        "position": 4,
+                                        "name": "Pricing",
+                                        "item": "${SEO_CONFIG.site.url}/pricing"
+                                    }
+                                ]
+                            },
+                            {
+                                "@context": "https://schema.org",
+                                "@type": "ItemList",
+                                "name": "Main Navigation",
+                                "itemListElement": [
+                                    { "@type": "SiteNavigationElement", "position": 1, "name": "School Management", "url": "${SEO_CONFIG.site.url}/school-management" },
+                                    { "@type": "SiteNavigationElement", "position": 2, "name": "College Management", "url": "${SEO_CONFIG.site.url}/college-management" },
+                                    { "@type": "SiteNavigationElement", "position": 3, "name": "Institute Management", "url": "${SEO_CONFIG.site.url}/institute-management" },
+                                    { "@type": "SiteNavigationElement", "position": 4, "name": "Features", "url": "${SEO_CONFIG.site.url}/features" },
+                                    { "@type": "SiteNavigationElement", "position": 5, "name": "Pricing", "url": "${SEO_CONFIG.site.url}/pricing" },
+                                    { "@type": "SiteNavigationElement", "position": 6, "name": "FAQ", "url": "${SEO_CONFIG.site.url}/faq" }
+                                ]
+                            }
+                        ]`
                     }}
                 />
             </body>

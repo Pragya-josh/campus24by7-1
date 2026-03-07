@@ -14,15 +14,33 @@ import {
 
 // Navigation Links
 // Navigation Links
-export const NAV_LINKS: NavLink[] = [
-  // { name: "School Management", href: "/school-management" },
-  // { name: "College Management", href: "/college-management" },
-  // { name: "Institute & Coaching", href: "/institute-management" },
-  { name: "Features", href: "/features" },
-  // { name: "Modules", href: "#modules" }, // Modules usually part of features
+export const NAV_LINKS = [
+  {
+    name: "Solutions",
+    children: [
+      { name: "School Management", href: "/school-management", description: "ERP for K-12 and Pre-schools" },
+      { name: "College Management", href: "/college-management", description: "Higher education administration" },
+      { name: "Institute Management", href: "/institute-management", description: "Coaching and vocational centers" },
+    ]
+  },
+  {
+    name: "Product",
+    children: [
+      { name: "Features", href: "/features", description: "Explore all 50+ modules" },
+      { name: "Compare", href: "/compare", description: "Campus24by7 vs Legacy Systems" },
+      { name: "Explore Institutions", href: "/explore", description: "Directory of educational hubs" },
+    ]
+  },
   { name: "Pricing", href: "/pricing" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "/contact" },
+  {
+    name: "Company",
+    children: [
+      { name: "About Us", href: "/about", description: "" },
+      { name: "Success Stories", href: "/success-stories", description: "Real results from institutions" },
+      { name: "FAQ", href: "/faq", description: "" },
+      { name: "Contact", href: "/contact", description: "" },
+    ]
+  },
 ];
 
 // Hero Section
