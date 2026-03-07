@@ -14,7 +14,7 @@ import {
 
 // Navigation Links
 // Navigation Links
-export const NAV_LINKS = [
+export const NAV_LINKS: any[] = [
   {
     name: "Solutions",
     children: [
@@ -31,7 +31,6 @@ export const NAV_LINKS = [
       { name: "Explore Institutions", href: "/explore", description: "Directory of educational hubs" },
     ]
   },
-  { name: "Pricing", href: "/pricing" },
   {
     name: "Company",
     children: [

@@ -55,7 +55,7 @@ const Navbar = () => {
                       link.name === "Company" ? "w-44" : "w-72"
                     )}
                   >
-                    {link.children.map((child) => {
+                    {link.children.map((child: any) => {
                       const Icon = child.name.includes("School") ? Building2 :
                         child.name.includes("College") ? GraduationCap :
                           child.name.includes("Institute") ? Layout :
@@ -166,7 +166,7 @@ const Navbar = () => {
                       </button>
                       {mobileExpanded === link.name && (
                         <div className="flex flex-col gap-4 pl-4 pt-2 pb-4 border-l-2 border-primary/20 animate-in slide-in-from-left-2">
-                          {link.children.map((child) => (
+                          {link.children.map((child: any) => (
                             <Link
                               key={child.name}
                               href={child.href}

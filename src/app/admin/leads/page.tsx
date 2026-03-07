@@ -15,7 +15,8 @@ import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { MessageSquare, Mail, Phone, ExternalLink, Loader2, Search, ShieldCheck } from "lucide-react";
+import { MessageSquare, Mail, Phone, ExternalLink, Loader2, Search, ShieldCheck, CreditCard } from "lucide-react";
+import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { APP_CONFIG } from "@/config/app.config";
 
@@ -95,17 +96,25 @@ export default function AdminLeadsPage() {
             <main className="pt-32 pb-20 container mx-auto px-4">
                 <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
                     <div>
-                        <h1 className="text-3xl font-bold">Lead Management</h1>
+                        <h1 className="text-3xl font-bold tracking-tight">Lead Management</h1>
                         <p className="text-muted-foreground">Manage and respond to all institutional queries.</p>
                     </div>
-                    <div className="relative w-full md:w-96">
-                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                        <Input
-                            placeholder="Search by name or institution..."
-                            className="pl-10 rounded-xl"
-                            value={search}
-                            onChange={(e) => setSearch(e.target.value)}
-                        />
+                    <div className="flex gap-3">
+                        <Button variant="outline" className="rounded-xl border-primary/20 text-primary hover:bg-primary/5 font-bold" asChild>
+                            <Link href="/admin/quotations">
+                                <CreditCard className="w-4 h-4 mr-2" />
+                                Quotes Builder
+                            </Link>
+                        </Button>
+                        <div className="relative w-full md:w-80">
+                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                            <Input
+                                placeholder="Search by name or institution..."
+                                className="pl-10 rounded-xl"
+                                value={search}
+                                onChange={(e) => setSearch(e.target.value)}
+                            />
+                        </div>
                     </div>
                 </div>
 
