@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <system.webServer>
+    <!-- 
+      "Everything through Node" web.config
+      This version routes EVERYTHING to your server.js.
+      This allows Next.js to handle ALL routing and static assets,
+      bypassing IIS path resolution issues.
+    -->
+    <rewrite>
+      <rules>
+        <rule name="EverythingToNode">
+          <match url=".*" />
+          <action type="Rewrite" url="server.js" />
+        </rule>
+      </rules>
+    </rewrite>
+
+    <!-- Passing through errors so we can see what Node.js says -->
+    <httpErrors existingResponse="PassThrough" />
+
+    <!-- 
+      We omit the <iisnode> and <handlers> sections here because 
+      Plesk often manages them automatically. If this causes a 500,
+      we will know the hosting requires them.
+    -->
+  </system.webServer>
+</configuration>

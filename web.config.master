@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <system.webServer>
+    <handlers>
+      <remove name="iisnode" />
+      <add name="iisnode" path="server.js" verb="*" modules="iisnode" />
+    </handlers>
+
+    <rewrite>
+      <rules>
+        <!-- 1. Handle the renamed .next -> _next folder mapping -->
+        <rule name="RenamedNextAssets" stopProcessing="true">
+          <match url="^_next/(.*)" />
+          <action type="Rewrite" url="_next/{R:1}" />
+        </rule>
+
+        <!-- 2. Allow physical files in the root (like logo.png or public files) to be served -->
+        <rule name="StaticFiles" stopProcessing="true">
+          <match url=".*" />
+          <conditions>
+            <add input="{REQUEST_FILENAME}" matchType="IsFile" />
+          </conditions>
+          <action type="None" />
+        </rule>
+
+        <!-- 3. Route everything else to server.js (Subpages, API routes, RSC) -->
+        <rule name="DynamicContent">
+          <match url=".*" />
+          <conditions>
+            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+            <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+          </conditions>
+          <action type="Rewrite" url="server.js" />
+        </rule>
+      </rules>
+    </rewrite>
+
+    <httpErrors existingResponse="PassThrough" />
+
+    <iisnode 
+      node_env="production"
+      devErrorsEnabled="true"
+      loggingEnabled="true"
+      logDirectory="iisnode"
+      watchedFiles="web.config;*.js"
+    />
+  </system.webServer>
+</configuration>

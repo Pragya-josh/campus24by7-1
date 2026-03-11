@@ -20,16 +20,19 @@ export default function MyRequestsPage() {
     }, [token]);
 
     const fetchTickets = async () => {
+        setLoading(true);
         try {
-            const response = await fetch(`${APP_CONFIG.api.baseUrl}/api/support/Tickets`, {
+            const response = await fetch("/api/support", {
                 headers: { "Authorization": `Bearer ${token}` }
             });
             const result = await response.json();
             if (response.ok) {
-                setTickets(result);
+                setTickets(Array.isArray(result) ? result : (result.data || []));
+            } else {
+                throw new Error(result.message || "Failed to load requests");
             }
-        } catch (error) {
-            toast.error("Failed to load your requests");
+        } catch (error: any) {
+            toast.error(error.message || "Aivora-ecosystem backend is unreachable");
         } finally {
             setLoading(false);
         }

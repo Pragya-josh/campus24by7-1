@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <system.webServer>
+    <!-- 
+      ROUTING web.config
+      This version focuses solely on making sure subpages (/about, /privacy, etc.) 
+      are routed to your Node.js process instead of 404ing.
+    -->
+    <handlers>
+      <remove name="iisnode" />
+      <add name="iisnode" path="server.js" verb="*" modules="iisnode" />
+    </handlers>
+
+    <rewrite>
+      <rules>
+        <!-- 
+          The main rule that tells IIS: 
+          "If the request is NOT a physical file (like a .png or .css), 
+          give it to Node.js (server.js)"
+        -->
+        <rule name="DynamicContent">
+          <match url=".*" />
+          <conditions>
+            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+          </conditions>
+          <action type="Rewrite" url="server.js" />
+        </rule>
+      </rules>
+    </rewrite>
+
+    <!-- Ensure errors from Node.js are shown instead of generic IIS 404s -->
+    <httpErrors existingResponse="PassThrough" />
+
+    <iisnode 
+      node_env="production"
+      devErrorsEnabled="true"
+      loggingEnabled="true"
+      logDirectory="iisnode"
+    />
+  </system.webServer>
+</configuration>

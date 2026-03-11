@@ -4,11 +4,12 @@ This guide documents the changes made to the application to support deployment o
 
 ## 1. Application Changes
 
-### **Static Export Configuration**
-Since shared hosting environments often lack native persistent Node.js server support (or it's complex to configure), we have configured Next.js to use **Static Exports**. This pre-renders all pages into HTML/CSS/JS files during the build process.
+### **Deployment Strategy: Standalone Node.js (Recommended)**
+We have switched from **Static Export** to **Standalone Node.js** to support server-side features like API routes, Prisma database connection, and dynamic rendering.
 
-- **`next.config.mjs`**: Added `output: 'export'` and `trailingSlash: true`.
-- **Dynamic Routes**: Added `generateStaticParams` to dynamic pages (`/blog/[slug]` and `/features/[slug]`) to pre-calculate all possible paths at build time.
+- **`next.config.mjs`**: Configured with `output: 'standalone'`.
+- **`web.config`**: Located in the root, it configures `iisnode` to run the Next.js server on Windows IIS.
+
 
 ### **IIS Configuration**
 - **`public/web.config`**: Created a `web.config` file. This is essential for Windows Server (IIS).

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <system.webServer>
+    <!-- 
+      This is a "Safe" minimal web.config.
+      It avoids adding handlers or iisnode settings that might conflict with Plesk defaults.
+      It focuses on unhiding the .next folder and adding MIME types for static assets.
+    -->
+    <security>
+      <requestFiltering>
+        <hiddenSegments>
+          <!-- IIS blocks .dot folders by default. We must unhide .next for assets to load. -->
+          <remove segment=".next" />
+        </hiddenSegments>
+      </requestFiltering>
+    </security>
+
+    <staticContent>
+      <remove fileExtension=".webp" />
+      <mimeMap fileExtension=".webp" mimeType="image/webp" />
+      <remove fileExtension=".woff" />
+      <mimeMap fileExtension=".woff" mimeType="application/font-woff" />
+      <remove fileExtension=".woff2" />
+      <mimeMap fileExtension=".woff2" mimeType="application/font-woff2" />
+      <remove fileExtension=".json" />
+      <mimeMap fileExtension=".json" mimeType="application/json" />
+      <remove fileExtension=".webmanifest" />
+      <mimeMap fileExtension=".webmanifest" mimeType="application/manifest+json" />
+    </staticContent>
+
+    <!-- 
+      The following rewrite is only needed if Plesk doesn't automatically route 
+      unknown requests to server.js. If you still see 404s after unhiding .next, 
+      you may need to uncomment the rewrite rules below.
+    -->
+    <!--
+    <rewrite>
+      <rules>
+        <rule name="DynamicContent">
+          <match url="(.*)" />
+          <conditions>
+            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="True" />
+            <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="True" />
+          </conditions>
+          <action type="Rewrite" url="server.js" />
+        </rule>
+      </rules>
+    </rewrite>
+    -->
+
+    <httpErrors existingResponse="PassThrough" />
+  </system.webServer>
+</configuration>

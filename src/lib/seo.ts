@@ -368,6 +368,7 @@ export const updatePageSEO = (
   description: string,
   keywords?: string[]
 ) => {
+  if (typeof window === "undefined") return;
   document.title = title;
 
   // Update description meta tag
@@ -402,6 +403,7 @@ export const updatePageSEO = (
  * Add JSON-LD structured data to page
  */
 export const addStructuredData = (jsonld: object) => {
+  if (typeof window === "undefined") return;
   const script = document.createElement("script");
   script.type = "application/ld+json";
   script.innerHTML = JSON.stringify(jsonld);

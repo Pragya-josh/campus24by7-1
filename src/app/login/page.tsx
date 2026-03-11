@@ -24,7 +24,7 @@ export default function LoginPage() {
         setLoading(true);
 
         try {
-            const response = await fetch(`${APP_CONFIG.api.baseUrl}/api/identity/Users/login`, {
+            const response = await fetch("/api/auth/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ identifier: email, password })

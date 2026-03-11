@@ -24,6 +24,7 @@ export default function AdminLeadsPage() {
     const { token, isAdmin } = useAuth();
     const [leads, setLeads] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
     const [search, setSearch] = useState("");
 
     useEffect(() => {
@@ -31,16 +32,25 @@ export default function AdminLeadsPage() {
     }, [token]);
 
     const fetchLeads = async () => {
+        setLoading(true);
+        setError(null);
         try {
-            const response = await fetch(`${APP_CONFIG.api.baseUrl}/api/lead/Leads`, {
+            const response = await fetch("/api/leads", {
                 headers: { "Authorization": `Bearer ${token}` }
             });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.message || "Could not connect to service");
+            }
+
             const result = await response.json();
             if (result.success) {
                 setLeads(result.data);
             }
-        } catch (error) {
-            toast.error("Failed to load leads");
+        } catch (err: any) {
+            setError(err.message || "Aivora-ecosystem backend is unreachable. Please check if the services are running.");
+            toast.error("Service Unreachable");
         } finally {
             setLoading(false);
         }
@@ -121,6 +131,12 @@ export default function AdminLeadsPage() {
                 <div className="bg-card border border-border rounded-[2rem] overflow-hidden shadow-soft">
                     {loading ? (
                         <div className="p-20 text-center"><Loader2 className="w-8 h-8 animate-spin mx-auto mb-4" /> Loading leads...</div>
+                    ) : error ? (
+                        <div className="p-20 text-center">
+                            <div className="text-destructive mb-4 font-bold">⚠️ Service Error</div>
+                            <p className="text-muted-foreground mb-6">{error}</p>
+                            <Button variant="outline" onClick={fetchLeads}>Try Reconnecting</Button>
+                        </div>
                     ) : (
                         <Table>
                             <TableHeader className="bg-muted/50">

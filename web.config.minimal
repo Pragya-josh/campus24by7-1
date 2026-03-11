@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <system.webServer>
+    <!-- 
+      ULTRA-MINIMAL web.config
+      If this also causes 500, then your hosting does not allow custom web.config files at all.
+    -->
+    <rewrite>
+      <rules>
+        <!-- 
+          The following rule maps "domain.com/_next/..." URLs to the physical folder.
+          If you have renamed ".next" to "_next" on the server, this helps IIS find it.
+        -->
+        <rule name="StaticAssets" stopProcessing="true">
+          <match url="^_next/(.*)" />
+          <action type="Rewrite" url="_next/{R:1}" />
+        </rule>
+
+        <rule name="DynamicContent">
+          <match url="(.*)" />
+          <conditions>
+            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="True" />
+            <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="True" />
+          </conditions>
+          <action type="Rewrite" url="server.js" />
+        </rule>
+      </rules>
+    </rewrite>
+    <httpErrors existingResponse="PassThrough" />
+  </system.webServer>
+</configuration>

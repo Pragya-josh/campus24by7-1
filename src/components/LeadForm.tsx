@@ -38,7 +38,9 @@ export function LeadForm({
         };
 
         try {
-            const response = await fetch(`${APP_CONFIG.api.baseUrl}/api/lead/Leads/submit`, {
+            // Use local API proxy instead of direct microservice call
+            // This allows the server to handle fallback to DB if the microservice is down
+            const response = await fetch("/api/leads", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data)
@@ -51,7 +53,9 @@ export function LeadForm({
                 throw new Error("Failed to submit");
             }
         } catch (error) {
-            toast.error("Something went wrong. Please call us directly.");
+            console.error("Submission error:", error);
+            // If even local proxy fails, we show a graceful message
+            toast.error("Connectivity issue. Please call us at +91 9557172321");
         } finally {
             setLoading(false);
         }
