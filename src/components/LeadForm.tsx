@@ -38,20 +38,28 @@ export function LeadForm({
         };
 
         try {
-            // Use local API proxy instead of direct microservice call
-            // This allows the server to handle fallback to DB if the microservice is down
-            const response = await fetch("/api/leads", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data)
-            });
+            await new Promise(resolve => setTimeout(resolve, 1000));
 
-            if (response.ok) {
-                setSuccess(true);
-                toast.success("Lead captured! We will contact you shortly.");
-            } else {
-                throw new Error("Failed to submit");
-            }
+            // --- SIMULATE ONSITE LOGGING ---
+            console.log("==========================================");
+            console.log("📨 SIMULATED EMAIL NOTIFICATION DISPATCH (Frontend Mock) 📨");
+            console.log(`To: admin@campus24by7.com`);
+            console.log(`Subject: New Lead Alert - Category: ${category}`);
+            console.log("Body:");
+            console.log(`Hello Admin,`);
+            console.log(`A new lead has been captured from the ${category} section.`);
+            console.log(``);
+            console.log(`**Lead Details:**`);
+            console.log(`Institution: ${data.businessName}`);
+            console.log(`Name: ${data.contactPerson}`);
+            console.log(`Email: ${data.email}`);
+            console.log(`Phone: ${data.primaryPhone}`);
+            console.log(`Message: ${data.message || 'No message provided'}`);
+            console.log(`Source: ${data.source}`);
+            console.log("==========================================");
+
+            setSuccess(true);
+            toast.success("Lead captured! We will contact you shortly.");
         } catch (error) {
             console.error("Submission error:", error);
             // If even local proxy fails, we show a graceful message

@@ -4,6 +4,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "School Management System - Campus24by7",
     description: "Premium School ERP for modern education. Manage attendance, fees, exams, and communication seamlessly.",
+    alternates: {
+        canonical: "/school-management",
+    },
 };
 
 const schoolFeatures = [

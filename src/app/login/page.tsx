@@ -24,15 +24,33 @@ export default function LoginPage() {
         setLoading(true);
 
         try {
-            const response = await fetch("/api/auth/login", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ identifier: email, password })
-            });
+            // Simulate network delay
+            await new Promise(resolve => setTimeout(resolve, 800));
 
-            const result = await response.json();
+            let result: any = { success: false, message: "Invalid email or password" };
 
-            if (response.ok && result.success) {
+            // Hardcoded admin login
+            if (email === "admin@admin.com" && password === "admin123") {
+                result = {
+                    success: true,
+                    data: {
+                        token: "mock-admin-token-12345",
+                        user: { id: "1", name: "Admin User", email: "admin@admin.com", role: "ADMIN" }
+                    }
+                };
+            }
+            // Hardcoded user login
+            else if (email === "user@user.com" && password === "user123") {
+                result = {
+                    success: true,
+                    data: {
+                        token: "mock-user-token-12345",
+                        user: { id: "2", name: "Regular User", email: "user@user.com", role: "USER" }
+                    }
+                };
+            }
+
+            if (result.success) {
                 login(result.data.token, result.data.user);
                 toast.success("Login successful!");
                 if (result.data.user.role === "ADMIN") {
@@ -44,7 +62,7 @@ export default function LoginPage() {
                 toast.error(result.message || "Login failed");
             }
         } catch (error) {
-            toast.error("Network error. Please try again.");
+            toast.error("An error occurred. Please try again.");
         } finally {
             setLoading(false);
         }
@@ -90,6 +108,15 @@ export default function LoginPage() {
                                 {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : "Sign In"}
                             </Button>
                         </form>
+
+                        <div className="mt-8 pt-8 border-t border-dashed border-border">
+                            <p className="text-xs text-center text-muted-foreground mb-4 font-medium uppercase tracking-wider">Aivora Support Ecosystem</p>
+                            <Button variant="outline" className="w-full rounded-xl border-primary/20 hover:bg-primary/5 text-primary font-bold" asChild>
+                                <a href="https://crm.campus24by7.com/" target="_blank" rel="noopener noreferrer">
+                                    Access Support CRM →
+                                </a>
+                            </Button>
+                        </div>
                     </CardContent>
                 </Card>
             </main>

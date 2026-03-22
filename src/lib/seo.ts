@@ -317,14 +317,20 @@ export const SEO_CONFIG = {
         "@context": "https://schema.org",
         "@type": "Service",
         "name": "College & University ERP",
-        "provider": { "$ref": "organization" },
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "Campus24by7"
+        },
         "description": "Robust higher education administration software for colleges and universities."
       },
       institute: {
         "@context": "https://schema.org",
         "@type": "Service",
         "name": "Institute & Coaching Management Software",
-        "provider": { "$ref": "organization" },
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "Campus24by7"
+        },
         "description": "Specialized ERP for coaching centers and vocational institutes with batch and test series management."
       }
     }

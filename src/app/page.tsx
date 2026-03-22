@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     title: SEO_CONFIG.pages.home.title,
     description: SEO_CONFIG.pages.home.description,
     keywords: SEO_CONFIG.pages.home.keywords,
+    alternates: {
+        canonical: "/",
+    },
 };
 
 export default function Home() {

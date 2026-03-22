@@ -54,9 +54,6 @@ export const metadata: Metadata = {
             'max-snippet': -1,
         },
     },
-    alternates: {
-        canonical: SEO_CONFIG.site.url,
-    },
     other: {
         "ai-description": "Campus24by7 is a comprehensive educational ERP for schools, colleges, and institutes. It offers automated attendance, fee collection, HR management, and a parent-teacher portal. Ideal for K-12 and higher education institutions seeking digital transformation.",
         "generative-ai": "index, follow",

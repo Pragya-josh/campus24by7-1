@@ -22,15 +22,24 @@ export default function MyRequestsPage() {
     const fetchTickets = async () => {
         setLoading(true);
         try {
-            const response = await fetch("/api/support", {
-                headers: { "Authorization": `Bearer ${token}` }
-            });
-            const result = await response.json();
-            if (response.ok) {
-                setTickets(Array.isArray(result) ? result : (result.data || []));
-            } else {
-                throw new Error(result.message || "Failed to load requests");
-            }
+            await new Promise(resolve => setTimeout(resolve, 500));
+            // Hardcoded mocked user support requests since backend is removed
+            setTickets([
+                {
+                    id: "ticket-REQ-921",
+                    subject: "Admission Process Inquiry",
+                    status: "Open",
+                    replyCount: 2,
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: "ticket-REQ-442",
+                    subject: "Invoice for Module Integration",
+                    status: "Closed",
+                    replyCount: 5,
+                    createdAt: new Date(Date.now() - 86400000 * 3).toISOString()
+                }
+            ]);
         } catch (error: any) {
             toast.error(error.message || "Aivora-ecosystem backend is unreachable");
         } finally {
@@ -108,7 +117,7 @@ export default function MyRequestsPage() {
                                         {ticket.replyCount} messages in thread
                                     </div>
                                     <Button size="sm" variant="ghost" className="rounded-xl font-bold hover:bg-primary/5 hover:text-primary" asChild>
-                                        <Link href={`/profile/requests/${ticket.id}`}>View Conversation →</Link>
+                                        <Link href={`/profile/requests/detail?id=${ticket.id}`}>View Conversation →</Link>
                                     </Button>
                                 </div>
                             </div>

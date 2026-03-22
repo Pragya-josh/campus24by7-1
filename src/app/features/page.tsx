@@ -8,6 +8,9 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
     title: 'Features - Campus24by7 Smart Hub',
     description: 'Explore the comprehensive features of Campus24by7: Attendance, Fees, Exams, Library, Hostel, Transport, and more.',
+    alternates: {
+        canonical: "/features",
+    },
 };
 
 const featuresList = [

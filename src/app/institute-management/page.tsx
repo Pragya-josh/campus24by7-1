@@ -4,6 +4,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Institute Management System - Campus24by7",
     description: "Specialized ERP for coaching centers and vocational institutes to manage batches, leads, and results.",
+    alternates: {
+        canonical: "/institute-management",
+    },
 };
 
 const instituteFeatures = [

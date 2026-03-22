@@ -35,19 +35,35 @@ export default function AdminLeadsPage() {
         setLoading(true);
         setError(null);
         try {
-            const response = await fetch("/api/leads", {
-                headers: { "Authorization": `Bearer ${token}` }
-            });
+            await new Promise(resolve => setTimeout(resolve, 600));
 
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.message || "Could not connect to service");
-            }
-
-            const result = await response.json();
-            if (result.success) {
-                setLeads(result.data);
-            }
+            // Hardcoded mocked leads since backend is disconnected
+            setLeads([
+                {
+                    id: "mock-1",
+                    businessName: "Demo High School",
+                    contactPerson: "Jane Smith",
+                    primaryPhone: "+91 9999900000",
+                    email: "jane@demoschool.com",
+                    category: "School Management",
+                    source: "WEBSITE",
+                    status: "NEW",
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: "mock-2",
+                    businessName: "Tech Institute of Science",
+                    contactPerson: "Dr. Alan Turing",
+                    primaryPhone: "+91 8888800000",
+                    email: "alan@techinstitute.edu",
+                    category: "College Management",
+                    subCategory: "ERP",
+                    source: "PROFILE_CLAIM",
+                    status: "PENDING",
+                    extraMetaDataJson: JSON.stringify({ designation: "Principal" }),
+                    createdAt: new Date().toISOString()
+                }
+            ]);
         } catch (err: any) {
             setError(err.message || "Aivora-ecosystem backend is unreachable. Please check if the services are running.");
             toast.error("Service Unreachable");

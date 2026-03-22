@@ -73,12 +73,7 @@ const nextStaticDir = path.join(deployDir, '.next', 'static');
 fs.mkdirSync(nextStaticDir, { recursive: true });
 fs.cpSync(path.join(__dirname, '.next', 'static'), nextStaticDir, { recursive: true });
 
-// 4.5. Ensure Prisma folder and schema are copied
-// Prisma requires the schema.prisma file to exist for the Query Engine to work in standalone mode
-console.log('Copying prisma folder...');
-if (fs.existsSync(path.join(__dirname, 'prisma'))) {
-    fs.cpSync(path.join(__dirname, 'prisma'), path.join(deployDir, 'prisma'), { recursive: true });
-}
+// Prisma has been removed. No need to copy schema folder.
 
 // 5. Create IISNode CommonJS Wrapper for Next.js ES Module Server
 console.log('Generating iisnode_wrapper.cjs for IIS CJS/ESM interop...');

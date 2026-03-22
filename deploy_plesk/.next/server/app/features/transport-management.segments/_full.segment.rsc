@@ -1,0 +1,81 @@
+1:"$Sreact.fragment"
+2:I[30824,["/_next/static/chunks/39337f4410e02ad6.js","/_next/static/chunks/0ac2c33f74cfed15.js","/_next/static/chunks/0f829668a65edaa1.js","/_next/static/chunks/b4cbf1dca90d22b2.js"],"default"]
+3:I[39756,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"default"]
+4:I[37457,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"default"]
+5:I[22016,["/_next/static/chunks/39337f4410e02ad6.js","/_next/static/chunks/0ac2c33f74cfed15.js","/_next/static/chunks/0f829668a65edaa1.js","/_next/static/chunks/b4cbf1dca90d22b2.js","/_next/static/chunks/a4af820edd131008.js","/_next/static/chunks/882f1d264272e842.js"],""]
+b:I[68027,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"default"]
+:HL["/_next/static/chunks/16cc8b5776ae015a.css","style"]
+:HL["/_next/static/media/1b99372b3eaef0c8-s.p.758e15a8.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+6:T1ad3,[
+                            {"@context":"https://schema.org","@type":"Organization","name":"Campus24by7","url":"https://campus24by7.com","logo":"https://campus24by7.com/logo.svg","description":"End-to-end ERP solution for schools, colleges, institutes, and coaching centers.","sameAs":["https://www.facebook.com/campus24by7","https://www.twitter.com/campus24by7","https://www.linkedin.com/company/campus24by7"],"contactPoint":{"@type":"ContactPoint","contactType":"Sales","telephone":"+919557172321","url":"https://wa.me/919557172321"}},
+                            {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Campus24by7 ERP","description":"Premium All-in-one ERP solution for schools, colleges, and coaching centers. Features include biometric attendance, automated fee collection, examination management, payroll, and parent-teacher communication portals.","url":"https://campus24by7.com","applicationCategory":"EducationalBusinessApplication","operatingSystem":"Web-based, Android, iOS","featureList":["Biometric Attendance Automation","Digital Fee Collection & SMS Reminders","Exam Management & Report Card Generation","Transport Fleet Tracking","HR & Payroll Automation","Inventory & Library Management","Multi-branch Leadership Dashboard","Student & Parent Mobile Apps"],"offers":{"@type":"AggregateOffer","priceCurrency":"INR","lowPrice":"4999","highPrice":"9999","offerCount":"3"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"520"}},
+                            {"@context":"https://schema.org","@type":"LocalBusiness","name":"Campus24by7","image":"https://campus24by7.com/logo.svg","description":"Best School, College, Institute, and Coaching Center Management System Provider in India","address":{"@type":"PostalAddress","streetAddress":"Dehradun","addressLocality":"Dehradun","addressRegion":"Uttarakhand","postalCode":"248001","addressCountry":"IN"},"telephone":"+919557172321","url":"https://campus24by7.com","geo":{"@type":"GeoCoordinates","latitude":"30.3165","longitude":"78.0322"},"sameAs":["https://www.facebook.com/campus24by7","https://www.twitter.com/campus24by7","https://www.linkedin.com/company/campus24by7"]},
+                            [{"@context":"https://schema.org","@type":"Service","name":"School Management System","provider":{"@type":"LocalBusiness","name":"Campus24by7"},"description":"Comprehensive K-12 school ERP with attendance automation, fee management, and academic tracking.","areaServed":"India","hasOfferCatalog":{"@type":"OfferCatalog","name":"School ERP Features","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Biometric Attendance"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Online Fee Collection"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Exam Management"}}]}},{"@context":"https://schema.org","@type":"Service","name":"College & University ERP","provider":{"$ref":"organization"},"description":"Robust higher education administration software for colleges and universities."},{"@context":"https://schema.org","@type":"Service","name":"Institute & Coaching Management Software","provider":{"$ref":"organization"},"description":"Specialized ERP for coaching centers and vocational institutes with batch and test series management."}],
+                            {
+                                "@context": "https://schema.org",
+                                "@type": "WebSite",
+                                "name": "Campus24by7",
+                                "url": "https://campus24by7.com",
+                                "potentialAction": {
+                                    "@type": "SearchAction",
+                                    "target": "https://campus24by7.com/explore?q={search_term_string}",
+                                    "query-input": "required name=search_term_string"
+                                }
+                            },
+                            {
+                                "@context": "https://schema.org",
+                                "@type": "BreadcrumbList",
+                                "itemListElement": [
+                                    {
+                                        "@type": "ListItem",
+                                        "position": 1,
+                                        "name": "Home",
+                                        "item": "https://campus24by7.com"
+                                    },
+                                    {
+                                        "@type": "ListItem",
+                                        "position": 2,
+                                        "name": "Solutions",
+                                        "item": "https://campus24by7.com/#solutions"
+                                    },
+                                    {
+                                        "@type": "ListItem",
+                                        "position": 3,
+                                        "name": "Features",
+                                        "item": "https://campus24by7.com/features"
+                                    },
+                                    {
+                                        "@type": "ListItem",
+                                        "position": 4,
+                                        "name": "Pricing",
+                                        "item": "https://campus24by7.com/pricing"
+                                    }
+                                ]
+                            },
+                            {
+                                "@context": "https://schema.org",
+                                "@type": "ItemList",
+                                "name": "Main Navigation",
+                                "itemListElement": [
+                                    { "@type": "SiteNavigationElement", "position": 1, "name": "School Management", "url": "https://campus24by7.com/school-management" },
+                                    { "@type": "SiteNavigationElement", "position": 2, "name": "College Management", "url": "https://campus24by7.com/college-management" },
+                                    { "@type": "SiteNavigationElement", "position": 3, "name": "Institute Management", "url": "https://campus24by7.com/institute-management" },
+                                    { "@type": "SiteNavigationElement", "position": 4, "name": "Features", "url": "https://campus24by7.com/features" },
+                                    { "@type": "SiteNavigationElement", "position": 5, "name": "Pricing", "url": "https://campus24by7.com/pricing" },
+                                    { "@type": "SiteNavigationElement", "position": 6, "name": "FAQ", "url": "https://campus24by7.com/faq" }
+                                ]
+                            }
+                        ]0:{"P":null,"b":"5gX7gfwrTjoelMAea7YKr","c":["","features","transport-management",""],"q":"","i":false,"f":[[["",{"children":["features",{"children":[["slug","transport-management","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/16cc8b5776ae015a.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/39337f4410e02ad6.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/0ac2c33f74cfed15.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/0f829668a65edaa1.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/_next/static/chunks/b4cbf1dca90d22b2.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","className":"outfit_9f4f9187-module__4LtYgq__variable inter_c15e96cb-module__0bjUvq__variable","children":["$","body",null,{"className":"font-inter antialiased","children":[["$","$L2",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"flex min-h-screen items-center justify-center bg-muted","children":["$","div",null,{"className":"text-center","children":[["$","h1",null,{"className":"mb-4 text-4xl font-bold","children":"404"}],["$","p",null,{"className":"mb-4 text-xl text-muted-foreground","children":"Oops! Page not found"}],["$","$L5",null,{"href":"/","className":"text-primary underline hover:text-primary/90","children":"Return to Home"}]]}]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$6"}}]]}]}]]}],{"children":["$L7",{"children":["$L8",{"children":["$L9",{},null,false,false]},null,false,false]},null,false,false]},null,false,false],"$La",false]],"m":"$undefined","G":["$b",[]],"S":true}
+c:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+d:"$Sreact.suspense"
+f:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"ViewportBoundary"]
+11:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"MetadataBoundary"]
+7:["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+8:["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+9:["$","$1","c",{"children":[["$","div",null,{"className":"min-h-screen flex items-center justify-center","children":["$","div",null,{"className":"text-center","children":[["$","h1",null,{"className":"text-4xl font-bold mb-4","children":"Feature Not Found"}],["$","$L5",null,{"href":"/features","className":"text-primary hover:underline","children":"Back to Features"}]]}]}],[["$","script","script-0",{"src":"/_next/static/chunks/a4af820edd131008.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/882f1d264272e842.js","async":true,"nonce":"$undefined"}]],["$","$Lc",null,{"children":["$","$d",null,{"name":"Next.MetadataOutlet","children":"$@e"}]}]]}]
+a:["$","$1","h",{"children":[null,["$","$Lf",null,{"children":"$L10"}],["$","div",null,{"hidden":true,"children":["$","$L11",null,{"children":["$","$d",null,{"name":"Next.Metadata","children":"$L12"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+10:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+13:I[27201,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"IconMark"]
+e:null
+12:[["$","title","0",{"children":"Feature Not Found | Campus24by7"}],["$","meta","1",{"name":"description","content":"Campus24by7 is a complete end-to-end ERP solution for schools, colleges, institutes, coaching centers, and universities. Manage admissions, attendance, fees, academics, transport, HR, payroll, communication, and more—all in one powerful platform."}],["$","meta","2",{"name":"author","content":"Campus24by7"}],["$","link","3",{"rel":"manifest","href":"/manifest.webmanifest","crossOrigin":"$undefined"}],["$","meta","4",{"name":"keywords","content":"school management system,college management system,school ERP,college ERP,institute management system,coaching management system,coaching center management software,campus management system,educational ERP,academic management software"}],["$","meta","5",{"name":"robots","content":"index, follow"}],["$","meta","6",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","7",{"name":"ai-description","content":"Campus24by7 is a comprehensive educational ERP for schools, colleges, and institutes. It offers automated attendance, fee collection, HR management, and a parent-teacher portal. Ideal for K-12 and higher education institutions seeking digital transformation."}],["$","meta","8",{"name":"generative-ai","content":"index, follow"}],["$","link","9",{"rel":"canonical","href":"https://campus24by7.com/"}],["$","meta","10",{"property":"og:title","content":"Campus24by7"}],["$","meta","11",{"property":"og:description","content":"Campus24by7 is a complete end-to-end ERP solution for schools, colleges, institutes, coaching centers, and universities. Manage admissions, attendance, fees, academics, transport, HR, payroll, communication, and more—all in one powerful platform."}],["$","meta","12",{"property":"og:url","content":"https://campus24by7.com/"}],["$","meta","13",{"property":"og:site_name","content":"Campus24by7"}],["$","meta","14",{"property":"og:locale","content":"en_US"}],["$","meta","15",{"property":"og:type","content":"website"}],["$","meta","16",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","17",{"name":"twitter:creator","content":"@campus24by7"}],["$","meta","18",{"name":"twitter:title","content":"Campus24by7"}],["$","meta","19",{"name":"twitter:description","content":"Campus24by7 is a complete end-to-end ERP solution for schools, colleges, institutes, coaching centers, and universities. Manage admissions, attendance, fees, academics, transport, HR, payroll, communication, and more—all in one powerful platform."}],["$","link","20",{"rel":"icon","href":"/logo.png"}],["$","link","21",{"rel":"apple-touch-icon","href":"/logo.png"}],["$","$L13","22",{}]]

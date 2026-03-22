@@ -8,6 +8,9 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
     title: 'Pricing - Campus24by7 Smart Hub',
     description: 'Flexible and affordable pricing plans for schools, colleges, and institutes. Choose the best plan for your campus.',
+    alternates: {
+        canonical: "/pricing",
+    },
 };
 
 const plans = [

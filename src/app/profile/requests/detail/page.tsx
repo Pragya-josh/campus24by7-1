@@ -27,13 +27,15 @@ function TicketDetailContent() {
 
     const fetchTicket = async () => {
         try {
-            const response = await fetch(`${APP_CONFIG.api.baseUrl}/api/support/Tickets/${id}`, {
-                headers: { "Authorization": `Bearer ${token}` }
+            await new Promise(resolve => setTimeout(resolve, 500));
+            setTicket({
+                id: id,
+                subject: `Ticket #${id}`,
+                description: "This is a conditionally mocked ticket based on the URL ID parameter.",
+                status: "OPEN",
+                replies: [],
+                createdAt: new Date().toISOString()
             });
-            const result = await response.json();
-            if (response.ok) {
-                setTicket(result);
-            }
         } catch (error) {
             toast.error("Failed to load conversation");
         } finally {
@@ -47,20 +49,21 @@ function TicketDetailContent() {
         setSending(true);
 
         try {
-            const response = await fetch(`${APP_CONFIG.api.baseUrl}/api/support/Tickets/${id}/replies`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${token}`
-                },
-                body: JSON.stringify({ message: reply })
-            });
-
-            if (response.ok) {
-                setReply("");
-                fetchTicket();
-                toast.success("Reply sent");
-            }
+            await new Promise(resolve => setTimeout(resolve, 500));
+            setTicket((prev: any) => ({
+                ...prev,
+                replies: [
+                    ...(prev.replies || []),
+                    {
+                        id: Date.now().toString(),
+                        message: reply,
+                        role: "USER",
+                        createdAt: new Date().toISOString()
+                    }
+                ]
+            }));
+            setReply("");
+            toast.success("Reply sent");
         } catch (error) {
             toast.error("Failed to send message");
         } finally {
