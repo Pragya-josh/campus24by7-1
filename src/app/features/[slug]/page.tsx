@@ -99,6 +99,54 @@ const getFeatureData = (slug: string): FeaturePageProps | null => {
                 "Transport Fee Collection",
                 "GPS Tracking Integration"
             ]
+        },
+        "digital-id-cards": {
+            title: "Digital ID Cards",
+            description: "Generate professional, secure ID cards for students and staff instantly with smart templates.",
+            slug: "digital-id-cards",
+            benefits: [
+                "Instant Batch ID Generation",
+                "Multiple Design Templates",
+                "QR/Bar Code Support",
+                "Emergency Details Handling",
+                "Print-Ready PDF Export"
+            ]
+        },
+        "noticeboard-communication": {
+            title: "Noticeboard & Communication",
+            description: "Instant notifications and announcements to parents, students, and staff via app and SMS.",
+            slug: "noticeboard-communication",
+            benefits: [
+                "Automated Class Alerts",
+                "App Push Notifications",
+                "Digital Circular Downloads",
+                "Broadcast to Target Groups",
+                "Event Calendar Synchronization"
+            ]
+        },
+        "timetable-management": {
+            title: "Timetable Management",
+            description: "Smart conflict-free scheduling for classes, teachers, and school resources.",
+            slug: "timetable-management",
+            benefits: [
+                "Conflict-Free Layout Builder",
+                "Teacher Substitution Manager",
+                "Subject Allocation Balance",
+                "Resource & Lab Booking",
+                "Printable Dashboard Views"
+            ]
+        },
+        "inventory-management": {
+            title: "Inventory Management",
+            description: "Track books, equipment, assets, and supplies with zero-stock safeguard alerts.",
+            slug: "inventory-management",
+            benefits: [
+                "Scan Asset Indexing (QR/Bar)",
+                "Issue & Returns Ledger",
+                "Dynamic Low-Stock Alerts",
+                "Vendor Supply Chain History",
+                "Complete Asset Audit Reports"
+            ]
         }
     }
     return features[slug] || null;
@@ -113,7 +161,11 @@ export async function generateStaticParams() {
         "expense-management",
         "examination-management",
         "hr-payroll",
-        "transport-management"
+        "transport-management",
+        "digital-id-cards",
+        "noticeboard-communication",
+        "timetable-management",
+        "inventory-management"
     ];
 
     return features.map((slug) => ({

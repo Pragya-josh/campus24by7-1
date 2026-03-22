@@ -55,6 +55,30 @@ const featuresList = [
         description: "Track institutional expenses, budgets, and financial reports efficiently.",
         icon: "🧾",
         link: "/features/expense-management"
+    },
+    {
+        title: "Digital ID Cards",
+        description: "Generate professional ID cards for students and staff instantly with smart templates.",
+        icon: "🪪",
+        link: "/features/digital-id-cards"
+    },
+    {
+        title: "Noticeboard & Communication",
+        description: "Instant notifications and announcements to parents, students, and staff via app and SMS.",
+        icon: "📢",
+        link: "/features/noticeboard-communication"
+    },
+    {
+        title: "Timetable Management",
+        description: "Smart conflict-free scheduling and calendars for classes, teachers, and resources.",
+        icon: "🗓️",
+        link: "/features/timetable-management"
+    },
+    {
+        title: "Inventory Management",
+        description: "Track books, equipment, assets, and supplies with zero-stock safeguard alerts.",
+        icon: "📦",
+        link: "/features/inventory-management"
     }
 ];
 
