@@ -135,7 +135,7 @@ export default function RootLayout({
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(structuredData)
+                        __html: JSON.stringify({ "@graph": structuredData })
                     }}
                 />
             </body>
