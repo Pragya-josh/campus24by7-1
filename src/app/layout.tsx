@@ -65,6 +65,67 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const structuredData = [
+        SEO_CONFIG.structuredData.organization,
+        SEO_CONFIG.structuredData.product,
+        SEO_CONFIG.structuredData.localBusiness,
+        ...Object.values(SEO_CONFIG.structuredData.services),
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": SEO_CONFIG.site.name,
+            "url": SEO_CONFIG.site.url,
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": `${SEO_CONFIG.site.url}/explore?q={search_term_string}`,
+                "query-input": "required name=search_term_string"
+            }
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": SEO_CONFIG.site.url
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Solutions",
+                    "item": `${SEO_CONFIG.site.url}/#solutions`
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Features",
+                    "item": `${SEO_CONFIG.site.url}/features`
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "Pricing",
+                    "item": `${SEO_CONFIG.site.url}/pricing`
+                }
+            ]
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Main Navigation",
+            "itemListElement": [
+                { "@type": "SiteNavigationElement", "position": 1, "name": "School Management", "url": `${SEO_CONFIG.site.url}/school-management` },
+                { "@type": "SiteNavigationElement", "position": 2, "name": "College Management", "url": `${SEO_CONFIG.site.url}/college-management` },
+                { "@type": "SiteNavigationElement", "position": 3, "name": "Institute Management", "url": `${SEO_CONFIG.site.url}/institute-management` },
+                { "@type": "SiteNavigationElement", "position": 4, "name": "Features", "url": `${SEO_CONFIG.site.url}/features` },
+                { "@type": "SiteNavigationElement", "position": 5, "name": "Pricing", "url": `${SEO_CONFIG.site.url}/pricing` },
+                { "@type": "SiteNavigationElement", "position": 6, "name": "FAQ", "url": `${SEO_CONFIG.site.url}/faq` }
+            ]
+        }
+    ];
+
     return (
         <html lang="en" className={`${outfit.variable} ${inter.variable}`}>
             <body className="font-inter antialiased">
@@ -74,66 +135,7 @@ export default function RootLayout({
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
-                        __html: `[
-                            ${JSON.stringify(SEO_CONFIG.structuredData.organization)},
-                            ${JSON.stringify(SEO_CONFIG.structuredData.product)},
-                            ${JSON.stringify(SEO_CONFIG.structuredData.localBusiness)},
-                            ${JSON.stringify(Object.values(SEO_CONFIG.structuredData.services))},
-                            {
-                                "@context": "https://schema.org",
-                                "@type": "WebSite",
-                                "name": "${SEO_CONFIG.site.name}",
-                                "url": "${SEO_CONFIG.site.url}",
-                                "potentialAction": {
-                                    "@type": "SearchAction",
-                                    "target": "${SEO_CONFIG.site.url}/explore?q={search_term_string}",
-                                    "query-input": "required name=search_term_string"
-                                }
-                            },
-                            {
-                                "@context": "https://schema.org",
-                                "@type": "BreadcrumbList",
-                                "itemListElement": [
-                                    {
-                                        "@type": "ListItem",
-                                        "position": 1,
-                                        "name": "Home",
-                                        "item": "${SEO_CONFIG.site.url}"
-                                    },
-                                    {
-                                        "@type": "ListItem",
-                                        "position": 2,
-                                        "name": "Solutions",
-                                        "item": "${SEO_CONFIG.site.url}/#solutions"
-                                    },
-                                    {
-                                        "@type": "ListItem",
-                                        "position": 3,
-                                        "name": "Features",
-                                        "item": "${SEO_CONFIG.site.url}/features"
-                                    },
-                                    {
-                                        "@type": "ListItem",
-                                        "position": 4,
-                                        "name": "Pricing",
-                                        "item": "${SEO_CONFIG.site.url}/pricing"
-                                    }
-                                ]
-                            },
-                            {
-                                "@context": "https://schema.org",
-                                "@type": "ItemList",
-                                "name": "Main Navigation",
-                                "itemListElement": [
-                                    { "@type": "SiteNavigationElement", "position": 1, "name": "School Management", "url": "${SEO_CONFIG.site.url}/school-management" },
-                                    { "@type": "SiteNavigationElement", "position": 2, "name": "College Management", "url": "${SEO_CONFIG.site.url}/college-management" },
-                                    { "@type": "SiteNavigationElement", "position": 3, "name": "Institute Management", "url": "${SEO_CONFIG.site.url}/institute-management" },
-                                    { "@type": "SiteNavigationElement", "position": 4, "name": "Features", "url": "${SEO_CONFIG.site.url}/features" },
-                                    { "@type": "SiteNavigationElement", "position": 5, "name": "Pricing", "url": "${SEO_CONFIG.site.url}/pricing" },
-                                    { "@type": "SiteNavigationElement", "position": 6, "name": "FAQ", "url": "${SEO_CONFIG.site.url}/faq" }
-                                ]
-                            }
-                        ]`
+                        __html: JSON.stringify(structuredData)
                     }}
                 />
             </body>
